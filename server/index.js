@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
 const { mongoose } = require('./database');
 
@@ -14,6 +15,8 @@ app.set('port',process.env.PORT || 3000);
 app.use(morgan('dev'));
 // Para poder entender el codigo json mejor
 app.use(express.json());
+
+app.use(cors({origin: 'http://localhost:4200'}));
 
 
 // Routes : Las vamos a usar como REST API

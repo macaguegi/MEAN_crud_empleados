@@ -12,7 +12,12 @@ empleadoCtrl.getEmpleados = async (req, res) => {
 
 empleadoCtrl.createEmpleado = async (req,res) => {
 
-    const empleado = new Empleado(req.body);
+    const empleado = new Empleado({
+        nombre: req.body.nombre,
+        cargo: req.body.cargo,
+        oficina: req.body.oficina,
+        salario: req.body.salario
+    });
     await empleado.save();
     res.json({
         "status" : "recibido cap . Empleado guardado"
