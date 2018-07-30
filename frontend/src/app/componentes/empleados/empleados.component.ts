@@ -32,7 +32,7 @@ export class EmpleadosComponent implements OnInit {
     this.empleadoService.postEmpleado(form.value)
       .subscribe(res => {
         this.resetFormulario(form);
-        M.toast({html: 'Gaurdado con exito'});
+        M.toast({html: 'Guardado con exito'});
         this.obtenerEmpleados();
       });
     }
@@ -58,6 +58,7 @@ export class EmpleadosComponent implements OnInit {
         console.log(res);
       });
   }
+
   resetFormulario(form?: NgForm) {
     if (form) {
       form.reset();

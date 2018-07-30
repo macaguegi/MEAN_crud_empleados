@@ -1,5 +1,14 @@
 <div class="container">
-  <div class="row">
+  <div id="cabecera" class="row">
+    <div class="col s12">
+      <h3 class="tituloModulo" >Módulo CRUD de Empleados</h3>
+      <p>A continuación podrá agregar empleados a la Base de Datos en MongoDB, actualizar la información, visualizar todos los empleados 
+        y si lo desea, puede eliminar algún registro.
+      </p>
+    </div>
+  </div>
+
+  <div id="agregarVer" class="row">
     <div class="col s5">
       <div class="card">
         <div class="card-content">
@@ -7,21 +16,25 @@
             <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]= "empleadoService.selectedEmpleado._id">
             <div class="row">
               <div class="input-field col s12">
+                  <i class="material-icons prefix">account_circle</i>
                 <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="empleadoService.selectedEmpleado.nombre" placeholder="Ingrese su nombre">
               </div>
               <div class="input-field col s12">
+                <i class="material-icons prefix">work</i>
                 <input type="text" name="cargo" #cargo="ngModel" [(ngModel)]="empleadoService.selectedEmpleado.cargo" placeholder="Ingrese el cargo" enabled>
               </div>
               <div class="input-field col s12">
+                <i class="material-icons prefix">add_location</i>
                 <input type="text" name="oficina" #oficina="ngModel" [(ngModel)]="empleadoService.selectedEmpleado.oficina" placeholder="Ingrese su oficina">
               </div>
               <div class="input-field col s12">
+                <i class="material-icons prefix">attach_money</i>
                 <input type="text" name="salario" #salario="ngModel" [(ngModel)]="empleadoService.selectedEmpleado.salario" placeholder="Ingrese su salario">
               </div>
-              <div class="card-action">
+              <div class="card-action center">
                 <div class="input-field cols12">
-                    <button class="btn-left" style="margin-right: 2px" (click)="resetFormulario(formEmpleado)">Limpiar</button>
-                  <button class="btn-right">Guardar</button>
+                    <button class="btn-left waves-effect waves-light btn" style="margin-right: 2px" (click)="resetFormulario(formEmpleado)">Limpiar</button>
+                  <button class="btn-right waves-effect waves-light btn">Guardar</button>
                 </div>
               </div>
             </div>
@@ -43,7 +56,7 @@
             <td>{{ empleado.nombre}}</td>
             <td>{{ empleado.cargo}}</td>
             <td>{{ empleado.oficina}}</td>
-            <td>
+            <td class="center">
               <a (click)="editarEmpleado(empleado)">
                 <i class="material-icons">edit</i>
               </a>
