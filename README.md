@@ -1,7 +1,8 @@
 # MEAN_crud_empleados
 Uso del stack MEAN para hacer un crud de empleados
 
-** ¿Cómo correr el aplicativo **
+### ¿Cómo correr el aplicativo
+
 0) Descargue o clone el proyecto MEAN_crud_empleados en su computador
 1) Asegurese de tener instalado MongoDB en su computador
 2) Ingrese a la carpeta donde se instaló MongoDB desde una terminal y acceda a la siguiente ruta "MongoDB/Server/4.0/bin/"
